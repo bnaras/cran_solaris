@@ -171,7 +171,7 @@ R
 
 *Repeat with each release of R.*
 
-Repeat with R-devel sources.
+Repeat 1.4 with R-devel sources.
 
 ## 2\. Solaris 11 Notes
 
