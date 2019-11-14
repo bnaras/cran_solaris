@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 id="cran-solaris-10/11-setup-for-package-testing">CRAN Solaris 10/11 Setup for Package Testing</h1>
+<p>Balasubramanian Narasimhan November 1, 2019</p>
+<h2 id="environment">Environment</h2>
+<ul>
+<li>Macbook pro running MacOS 10.15.1</li>
+<li><a href="https://www.virtualbox.org/">Virtual Box Version 6.0.14 r133895 (Qt5.6.3)</a></li>
+<li>Enable function keys to work as standard function keys via system preferences for setup of Solaris and set it back as needed</li>
+<li>I do everything as <code>root</code> (a bit lazy, yes) and so I create a directory <code>/root</code> where I keep files, sources and build things, including the <code>config.site</code> and <code>mapfile</code> referenced below.</li>
+</ul>
+<h3 id="config-and-mapfile">Config and Mapfile</h3>
+<p>The <code>config.site</code> provides all the flags for building with Oracle Developer Studio and override default settings. Note the reference to a <code>mapfile</code> which I place in <code>/root/mapfile</code> (more below).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co">#! /bin/sh</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">## From Solaris specs on CRAN</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="va">CC=</span><span class="st">'cc -xc99'</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="va">CPPFLAGS=</span><span class="st">&quot;-I/opt/csw/include -I/usr/local/include&quot;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="va">LDFLAGS=</span><span class="st">&quot;-L/opt/csw/lib -L/usr/local/lib -M/root/mapfile&quot;</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="va">CFLAGS=</span><span class="st">'-O -xlibmieee -xlibmil -xtarget=native -xcache=generic -nofstore'</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="va">FC=</span>f95</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="va">FFLAGS=</span><span class="st">'-O -libmil -xtarget=native -xcache=generic -nofstore'</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="va">CXX=</span>CC</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="va">CXXSTD=</span><span class="st">&quot;-std=c++11 -library=stdcpp,CrunG3&quot;</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="va">CXXFLAGS=</span><span class="st">&quot;-O -xlibmil -xtarget=native -xcache=generic -nofstore&quot;</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="va">CXX98STD=</span><span class="st">&quot;-compat=g -library=stdcpp,CrunG3&quot;</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="va">CXX11STD=$CXXSTD</span></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15"><span class="va">SAFE_FFLAGS=</span><span class="st">&quot;-O -fstore&quot;</span></a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="va">FCLIBS_XTRA=</span><span class="st">&quot;-lfsu /opt/developerstudio12.6/lib/libfui.so.2&quot;</span></a>
+<a class="sourceLine" id="cb1-17" data-line-number="17"><span class="va">R_LD_LIBRARY_PATH=</span><span class="st">&quot;/opt/developerstudio12.6/lib:/usr/local/lib:/opt/csw/lib&quot;</span></a></code></pre></div>
+<h3 id="mapfile">Mapfile</h3>
+<p>The <code>mapfile</code> below is something that overrides assumptions the compilers make about hardware; see <a href="https://docs.oracle.com/cd/E19120-01/open.solaris/819-0690/chapter2-20/index.html">reference</a>. Without this fix, expect a strange error about <code>sysdata</code> not being loaded! My goal is not speed, but mere checking, so I go with the bare minimum.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" data-line-number="1">$mapfile_version <span class="dv">2</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">CAPABILITY {</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    HW = ;</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">};</a></code></pre></div>
+<h2 id="1.-solaris-10-instructions">1. Solaris 10 Instructions</h2>
+<h3 id="1.1.-set-up-solaris-10-os">1.1. Set up Solaris 10 OS</h3>
+<p><em>A one-time setup!</em></p>
+<ul>
+<li>Dowload template from <a href="https://download.oracle.com/otn/solaris/vm/Solaris10_1-13_VM.ova">Oracle</a>.</li>
+<li>Import appliance (<code>.ova</code> file) into vbox.</li>
+<li>After import, tweak settings
+<ul>
+<li>System/Motherboard: Base Memory 8G, 2 processors</li>
+<li>Display/Video Memory: 32Mb</li>
+<li>General/Advanced: Enable Shared Clipboard</li>
+<li>Shared Folders: Local Downloads folder (<code>Folder Name: Downloads</code>), automounted to Solaris (<code>Mount point: Downloads</code>), although it is seen at <code>/mnt/sf_Downloads</code>!</li>
+<li>Save settings</li>
+</ul></li>
+<li>Boot into Solaris for the first time.
+<ul>
+<li>Choose timezone, and en_US.UTF-8 as Locale</li>
+<li>Setup root password which we will use for everything</li>
+<li>To avoid hassles, decline <code>NIS+</code> or <code>NIS</code> and just go with <code>DNS</code> (which is what I do), or even none if you don’t know what those terms mean. (The latter, however, could be limiting for dns name resolution and downloads.)</li>
+<li>Go with default for all else</li>
+</ul></li>
+</ul>
+<h3 id="1.2.-set-up-oracle-developer-studio">1.2. Set up Oracle Developer Studio</h3>
+<p><em>A one-time setup unless the version of Developer Studio changes!</em></p>
+<ul>
+<li>Log in as <code>root</code>. (As noted earlier I do everything as <code>root</code>.)</li>
+<li>Create a directory called <code>/root</code> and save <code>config.site</code> and <code>mapfile</code> above there.</li>
+<li>Install Developer Studio (v12.6 as of this writing)
+<ul>
+<li>Download <a href="https://www.oracle.com/technetwork/server-storage/developerstudio/overview/index.html">Oracle Developer Studio tar gz file</a></li>
+<li>Unzip, untar, install and patch.</li>
+</ul></li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">bzcat</span> -d OracleDeveloperStudio12.6-solaris-x86-pkg.tar.bz2 <span class="kw">|</span> <span class="fu">tar</span> xf -</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="bu">cd</span> OracleDeveloperStudio12.6-solaris-x86-pkg</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="ex">./developerstudio.sh</span> --non-interactive</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ex">./install_patches.sh</span></a></code></pre></div>
+<h3 id="1.3.-set-up-open-csw">1.3. Set up Open CSW</h3>
+<p><em>A one-time setup.</em></p>
+<ul>
+<li>Install needed packages from Open CSW Project tree</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">pkgadd</span> -d http://get.opencsw.org/now</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">/opt/csw/bin/pkgutil</span> -U</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">/opt/csw/bin/pkgutil</span> -y -i libiconv_dev libz_dev libreadline_dev liblzma_dev libpcre_dev libcurl_dev libssh2_dev libssl_dev libcares_dev librtmp_dev libkrb5_dev libk5crypto3 liblber2_4_2 libbrotli_dev texlive gtar curl wget emacs</a></code></pre></div>
+<ul>
+<li>Add symbolic link manually, otherwise, expect (incorrect) error message about curl version during configure!</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">ln</span> -s /opt/csw/lib/liblber-2.4.so.2 /opt/csw/lib/liblber.so</a></code></pre></div>
+<h3 id="1.4.-build-r-patched">1.4. Build <code>R-patched</code></h3>
+<p><em>Repeat with each release of R.</em></p>
+<p>I build in <code>/root</code> and install to <code>/root/RHOME</code>. Always build <code>R-patched</code> first since <code>R-devel</code> can be unstable leaving you wondering if the toolchain is wrong or the R-devel source is unstable!</p>
+<ul>
+<li>Set up environment and directory</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">mkdir</span> /root</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="bu">export</span> <span class="va">PATH=</span>/usr/ccs/bin:/opt/developerstudio12.6/bin:/usr/sfw/bin:/usr/xpg4/bin:/usr/xpg6/bin::/opt/csw/bin:<span class="va">$PATH</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="bu">cd</span> /root</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="fu">mkdir</span> RHOME <span class="co">## where R will land</span></a></code></pre></div>
+<ul>
+<li>Download <code>R-devel.tar.gz</code> or <code>R-patched.tar.gz</code> and untar.</li>
+<li>Copy above <code>config.site</code> over the supplied <code>config.site</code> in <code>R-devel</code> or <code>R-patched</code> directory</li>
+<li>Configure and make in the main source directory</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="ex">./configure</span> --prefix=/root/RHOME --enable --with-internal-tzcode</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="fu">make</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="fu">make</span> install</a></code></pre></div>
+<ul>
+<li>Add <code>/root/RHOME</code> to path and invoke R</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="bu">export</span> <span class="va">PATH=$PATH</span>/RHOME/bin:<span class="va">$PATH</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="ex">R</span></a></code></pre></div>
+<h3 id="1.5.-build-r-devel">1.5. Build <code>R-devel</code></h3>
+<p><em>Repeat with each release of R.</em></p>
+<p>Repeat with R-devel sources.</p>
+<h2 id="2.-solaris-11-notes">2. Solaris 11 Notes</h2>
+<p>Avoid this if you can. Solaris X window server is appalling, is blindingly slow, hangs and crashes. But the following should work.</p>
+<h3 id="2.1.-set-up-solaris-11">2.1. Set up Solaris 11</h3>
+<p><em>One time setup.</em></p>
+<ul>
+<li>Download template from <a href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/vm-templates-2245495.html">Oracle</a>.</li>
+<li>Import appliance (<code>.ova</code> file) into vbox.</li>
+<li>After import, tweak settings
+<ul>
+<li>System: Base Memory 8G, 2 processors</li>
+<li>Display: 32Mb</li>
+<li>Shared Folders: Local Downloads folder (<code>Name: Downloads</code>), automounted to Solaris (<code>/Downloads</code>), although it is see at <code>/mnt/sf_Downloads</code>!</li>
+<li>Disable audio on Solaris 11 or it will freeze over and over!</li>
+<li>Save settings</li>
+</ul></li>
+<li>Boot into Solaris for the first time.
+<ul>
+<li>Choose timezone, and en_US.UTF-8 as Locale</li>
+<li>Setup root password and a standard account</li>
+<li>Go with default for all else.</li>
+<li>Log in as user, decline location services and online accounts synchronization. Exit the welcome app and reboot to be safe</li>
+</ul></li>
+</ul>
+<h3 id="2.2.-set-up-oracle-developer-studio">2.2. Set up Oracle Developer Studio</h3>
+<p><em>A one-time setup unless the version of Developer Studio changes!</em></p>
+<ul>
+<li>Install Developer Studio (v12.6 as of this writing)
+<ul>
+<li>Download <a href="https://pkg-register.oracle.com/register/certificate/">certificate and keys</a></li>
+<li><a href="https://pkg-register.oracle.com/register/repos/">Request access</a> and follow instructions on solaris machine.</li>
+</ul></li>
+<li>Update everything: <code>sudo pkg update</code></li>
+</ul>
+<h3 id="2.3.-follow-instructions-for-solaris-10">2.3. Follow Instructions for Solaris 10</h3>
+<p>From 1.3 onwards.</p>
+
+</body>
+</html>
