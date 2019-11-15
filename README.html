@@ -642,7 +642,7 @@ body {
 <li>Import appliance (<code>.ova</code> file) into vbox.</li>
 <li>After import, tweak settings
 <ul>
-<li>System/Motherboard: Base Memory 4G, 1 processor</li>
+<li>System/Motherboard: Base Memory 8G, 1 processor</li>
 <li>Display/Video Memory: 32Mb</li>
 <li>General/Advanced: Enable Shared Clipboard</li>
 <li>Shared Folders: Local Downloads folder (<code>Folder Name: Downloads</code>), automounted to Solaris (<code>Mount point: Downloads</code>), although it is seen at <code>/mnt/sf_Downloads</code>!</li>
@@ -682,7 +682,7 @@ body {
 
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">pkgadd</span> -d http://get.opencsw.org/now</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="ex">/opt/csw/bin/pkgutil</span> -U</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">/opt/csw/bin/pkgutil</span> -y -i libiconv_dev libz_dev libreadline_dev liblzma_dev libpcre_dev libcurl_dev libssh2_dev libssl_dev libcares_dev librtmp_dev libkrb5_dev libk5crypto3 liblber2_4_2 libbrotli_dev texlive gtar curl wget emacs</a></code></pre></div>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="ex">/opt/csw/bin/pkgutil</span> -y -i libiconv_dev libz_dev libreadline_dev liblzma_dev libpcre_dev libcurl_dev libssh2_dev libssl_dev libcares_dev librtmp_dev libkrb5_dev libk5crypto3 liblber2_4_2 libbrotli_dev libicu_dev pkg-config gmake texlive gtar curl wget emacs </a></code></pre></div>
 <ul>
 <li>Add symbolic link manually, otherwise, expect (incorrect) error message about curl version during configure!</li>
 </ul>
@@ -756,6 +756,13 @@ body {
 </ul>
 <h3 id="2.3.-follow-instructions-for-solaris-10">2.3. Follow Instructions for Solaris 10</h3>
 <p>From 1.3 onwards.</p>
+<h2 id="miscellaneous-notes">Miscellaneous Notes</h2>
+<ul>
+<li>To check/install a package which has <code>GNU Make</code> as a systems requirement, use</li>
+</ul>
+<!-- end list -->
+
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="va">MAKE=</span>gmake <span class="ex">R</span> CMD ...</a></code></pre></div>
 
 </body>
 </html>

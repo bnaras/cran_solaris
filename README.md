@@ -66,7 +66,7 @@ CAPABILITY {
     [Oracle](https://download.oracle.com/otn/solaris/vm/Solaris10_1-13_VM.ova).
   - Import appliance (`.ova` file) into vbox.
   - After import, tweak settings
-      - System/Motherboard: Base Memory 4G, 1 processor
+      - System/Motherboard: Base Memory 8G, 1 processor
       - Display/Video Memory: 32Mb
       - General/Advanced: Enable Shared Clipboard
       - Shared Folders: Local Downloads folder (`Folder Name:
@@ -114,7 +114,7 @@ cd OracleDeveloperStudio12.6-solaris-x86-pkg
 ``` bash
 pkgadd -d http://get.opencsw.org/now
 /opt/csw/bin/pkgutil -U
-/opt/csw/bin/pkgutil -y -i libiconv_dev libz_dev libreadline_dev liblzma_dev libpcre_dev libcurl_dev libssh2_dev libssl_dev libcares_dev librtmp_dev libkrb5_dev libk5crypto3 liblber2_4_2 libbrotli_dev texlive gtar curl wget emacs
+/opt/csw/bin/pkgutil -y -i libiconv_dev libz_dev libreadline_dev liblzma_dev libpcre_dev libcurl_dev libssh2_dev libssl_dev libcares_dev librtmp_dev libkrb5_dev libk5crypto3 liblber2_4_2 libbrotli_dev libicu_dev pkg-config gmake texlive gtar curl wget emacs 
 ```
 
   - Add symbolic link manually, otherwise, expect (incorrect) error
@@ -215,3 +215,14 @@ blindingly slow, hangs and crashes. But the following should work.
 ### 2.3. Follow Instructions for Solaris 10
 
 From 1.3 onwards.
+
+## Miscellaneous Notes
+
+  - To check/install a package which has `GNU Make` as a systems
+    requirement, use
+
+<!-- end list -->
+
+``` bash
+MAKE=gmake R CMD ...
+```
