@@ -218,7 +218,7 @@ From 1.3 onwards.
 
 ## Miscellaneous Notes
 
-  - To check/install a package which has `GNU Make` as a systems
+1.  To check/install a package which has `GNU Make` as a systems
     requirement, use
 
 <!-- end list -->
@@ -226,3 +226,39 @@ From 1.3 onwards.
 ``` bash
 MAKE=gmake R CMD ...
 ```
+
+2.  Some packages cannot be installed using the Oracle development
+    tools. The only recourse is the GNU tools. For this purpose, one
+    needs to jump through several hoops.
+
+<!-- end list -->
+
+  - Setup a directory `~/.R/Makevars` file with the following contents
+
+<!-- end list -->
+
+``` bash
+CC=gcc
+CFLAGS=-m32 -I/opt/csw/include -I/usr/local/include
+CPPFLAGS=-m32 -I/opt/csw/include -I/usr/local/include
+CPICFLAGS=
+CXXPICFLAGS=
+CXXSTD=
+F77=gfortran
+F77FLAGS=-m32
+CXX=g++
+CXXFLAGS=-m32 -I/opt/csw/include -I/usr/local/include
+FC=$F77
+LDFLAGS=-L/opt/csw/lib -L/usr/local/lib
+```
+
+I also set my path as follows
+
+``` bash
+export PATH=/opt/csw/gnu:/root/RHOME/bin:$PATH
+```
+
+so that the OpenCSW tools are found first. After this you can install
+packages like `stringi` which is needed by `stringr` which is needed for
+`knitr`. When done, move the directory back to `~/.R-gnu` to keep for
+future use.
